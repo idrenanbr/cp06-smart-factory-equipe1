@@ -1,0 +1,1 @@
+# cp06-smart-factory-equipe1
