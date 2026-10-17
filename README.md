@@ -71,4 +71,4 @@ Siga `ROTEIRO_VIDEO.md`. Grave a execução real e publique como **Não listado*
 - Envie o link do repositório no canal do professor e mantenha os três links acessíveis até a avaliação.
 
 ## Validação local
-Veja `VALIDACAO.md` para distinguir testes executados de verificações que ainda exigem Docker, Wokwi e internet.
+Veja `VALIDACAO.md` para os testes executados e as pendências. A aba Actions do GitHub executa a construção dos dois contêineres e um teste MQTT → API → dashboard em tópico exclusivo de teste. A execução normal usa o tópico da equipe indicado acima; variáveis de ambiente só substituem esse tópico durante testes isolados.

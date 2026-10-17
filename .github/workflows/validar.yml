@@ -1,0 +1,27 @@
+name: Validar Smart Factory
+on:
+  push:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  integracao:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      MQTT_TOPIC: edge/2ano/2CCPH/equipe11/ci-${{ github.run_id }}-${{ github.run_attempt }}/dados
+      MQTT_CLIENT_ID: api-ci-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Construir e iniciar os dois conteineres
+        run: docker compose up --build -d
+      - name: Conferir servicos
+        run: docker compose ps
+      - name: Testar MQTT, API e dashboard
+        run: docker compose exec -T api python - < tests/integracao.py
+      - name: Registros
+        if: always()
+        run: docker compose logs --no-color
+      - name: Encerrar
+        if: always()
+        run: docker compose down

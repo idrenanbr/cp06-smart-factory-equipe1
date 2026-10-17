@@ -19,6 +19,7 @@
 - A integração ESP32 → HiveMQ → API → dashboard foi executada fora do Docker, em validação local. Isso não substitui o teste dos contêineres.
 
 ## Pendências de entrega
+- Repositório GitHub público publicado e acessado sem autenticação.
 - Construir e executar os dois contêineres: Docker não encontrado neste ambiente.
 - Gravar e publicar o vídeo real e validar os links públicos.
 

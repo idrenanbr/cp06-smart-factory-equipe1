@@ -4,8 +4,8 @@ services:
     ports:
       - "5000:5000"
     environment:
-      MQTT_TOPIC: "edge/2ano/2CCPH/equipe11/ff84fafa1219/dados"
-      MQTT_CLIENT_ID: "api-ff84fafa1219"
+      MQTT_TOPIC: "${MQTT_TOPIC:-edge/2ano/2CCPH/equipe11/ff84fafa1219/dados}"
+      MQTT_CLIENT_ID: "${MQTT_CLIENT_ID:-api-ff84fafa1219}"
     restart: unless-stopped
   dashboard:
     build: ./dashboard

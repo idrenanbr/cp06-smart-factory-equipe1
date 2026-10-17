@@ -11,9 +11,6 @@ WiFiClient rede;
 PubSubClient mqtt(rede);
 unsigned long ultimaLeitura = 0;
 unsigned long ultimaTentativa = 0;
-float temperatura = NAN;
-float umidade = NAN;
-bool alerta = false;
 
 void setup() {
   Serial.begin(115200);
@@ -29,13 +26,12 @@ void setup() {
 
 void loop() {
   unsigned long agora = millis();
-  // A decisao local acontece antes de qualquer tentativa MQTT.
   if (agora - ultimaLeitura >= 5000) {
     ultimaLeitura = agora;
-    temperatura = dht.readTemperature();
-    umidade = dht.readHumidity();
+    float temperatura = dht.readTemperature();
+    float umidade = dht.readHumidity();
     if (!isnan(temperatura) && !isnan(umidade)) {
-      alerta = temperatura > 35.0;
+      bool alerta = temperatura > 35.0;
       digitalWrite(LED_VERDE, alerta ? LOW : HIGH);
       digitalWrite(LED_VERMELHO, alerta ? HIGH : LOW);
       char payload[128];
