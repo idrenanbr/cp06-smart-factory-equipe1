@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "author": "Equipe 11 - 2CCPH",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 20,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht",
+      "top": 0,
+      "left": 260,
+      "attrs": {
+        "temperature": "30",
+        "humidity": "60"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "green",
+      "top": 160,
+      "left": 260,
+      "attrs": {
+        "color": "green"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "red",
+      "top": 160,
+      "left": 360,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rg",
+      "top": 240,
+      "left": 230,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rr",
+      "top": 240,
+      "left": 330,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:TX0",
+      "$serialMonitor:RX",
+      "",
+      []
+    ],
+    [
+      "esp:RX0",
+      "$serialMonitor:TX",
+      "",
+      []
+    ],
+    [
+      "esp:3V3",
+      "dht:VCC",
+      "red",
+      []
+    ],
+    [
+      "esp:GND.1",
+      "dht:GND",
+      "black",
+      []
+    ],
+    [
+      "esp:D15",
+      "dht:SDA",
+      "blue",
+      []
+    ],
+    [
+      "esp:D18",
+      "rg:1",
+      "green",
+      []
+    ],
+    [
+      "rg:2",
+      "green:A",
+      "green",
+      []
+    ],
+    [
+      "green:C",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:D19",
+      "rr:1",
+      "red",
+      []
+    ],
+    [
+      "rr:2",
+      "red:A",
+      "red",
+      []
+    ],
+    [
+      "red:C",
+      "esp:GND.1",
+      "black",
+      []
+    ]
+  ]
+}
