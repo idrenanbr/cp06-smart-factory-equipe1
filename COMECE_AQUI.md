@@ -11,8 +11,9 @@ Extraia o ZIP inteiro. Dentro da pasta smart-factory, dê dois cliques em INICIA
 Sem Wokwi publicando, é esperado que a API mostre Aguardando dados do ESP32 e o dashboard mostre Aguardando dados.
 
 ## 3. Salvar a simulação
-Entre no Wokwi e crie um projeto ESP32. Copie os arquivos da pasta wokwi para o projeto: sketch.ino, diagram.json e libraries.txt. Se o editor não oferecer libraries.txt, adicione DHT sensor library, Adafruit Unified Sensor e PubSubClient pelo Library Manager.
-Salve como CP06 Smart Factory - Equipe 11 - 2CCPH. Inicie a simulação. Copie o endereço público para o README.
+A simulação já foi salva e compilada: https://wokwi.com/projects/478094294106915841.
+Abra esse projeto e clique no botão verde de iniciar. Não precisa montar novamente.
+Os arquivos da pasta wokwi são uma cópia para consulta e recuperação.
 
 ## 4. Conferir o funcionamento
 Ajuste o DHT22 para 30, 35, 36 e 30 °C. Para cada ajuste, aguarde a publicação seguinte, recarregue a API e clique Atualizar no dashboard. A sequência deve ser NORMAL, NORMAL, ALERTA, NORMAL. Compare os LEDs com os estados.
@@ -22,7 +23,8 @@ Deixe Wokwi, API e dashboard abertos. Mostre os contêineres em execução no Do
 Publique no YouTube com visibilidade Não listado e coloque o endereço no README.
 
 ## 6. Publicar GitHub
-Crie um repositório público chamado cp06-smart-factory-equipe11. Envie o conteúdo da pasta smart-factory, com README.md na raiz do repositório. Não envie apenas o ZIP. Confirme que as pastas api, dashboard e wokwi e o compose.yaml aparecem.
+O projeto já está publicado: https://github.com/idrenanbr/cp06-smart-factory-equipe1.
+Após publicar o vídeo, falta incluir seu link no README. Você pode enviar o link ao assistente para essa atualização.
 
 ## 7. Entregar
 Abra os três links em janela anônima: GitHub, Wokwi e YouTube. Confira se abrem sem convite. No canal definido pelo professor, envie o link do GitHub.

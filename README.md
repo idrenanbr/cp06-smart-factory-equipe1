@@ -39,6 +39,8 @@ O ESP32 lê o DHT22, decide o estado e controla os LEDs localmente. Temperatura 
 São somente dois serviços: `api` e `dashboard`. Não há broker local. As duas aplicações escutam em `0.0.0.0`. Não há banco de dados ou histórico. A API começa com HTTP 503 e `{"mensagem":"Aguardando dados do ESP32"}`. O dashboard mostra **Aguardando dados** quando não consegue obter uma leitura.
 
 ## Preparar o Wokwi
+O projeto já está pronto: https://wokwi.com/projects/478094294106915841. Abra e inicie a simulação. Os passos abaixo servem apenas para recriar uma cópia.
+
 1. Crie um projeto ESP32 em https://wokwi.com/projects/new/esp32.
 2. Substitua `sketch.ino` e `diagram.json` pelos arquivos da pasta `wokwi`.
 3. Adicione as bibliotecas de `libraries.txt` pelo gerenciador de bibliotecas.
@@ -72,3 +74,5 @@ Siga `ROTEIRO_VIDEO.md`. Grave a execução real e publique como **Não listado*
 
 ## Validação local
 Veja `VALIDACAO.md` para os testes executados e as pendências. A aba Actions do GitHub executa a construção dos dois contêineres e um teste MQTT → API → dashboard em tópico exclusivo de teste. A execução normal usa o tópico da equipe indicado acima; variáveis de ambiente só substituem esse tópico durante testes isolados.
+
+Os testes Docker e de integração passaram nesta [execução do GitHub Actions](https://github.com/idrenanbr/cp06-smart-factory-equipe1/actions/runs/38996454738). O firmware também foi compilado e executado no Wokwi, com os estados e leituras confirmados pela API local. O vídeo obrigatório permanece pendente.
